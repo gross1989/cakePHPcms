@@ -39,7 +39,9 @@ class ArticlesController extends AppController
     public function index()
     {
         $this->loadComponent('Paginator');
-        $articles = $this->Paginator->paginate($this->Articles->find());
+        $query = $this->Articles->find();
+        $query->contain(['Tags', 'Users']);
+        $articles = $this->Paginator->paginate($query);
         $this->set(compact('articles'));
     }
 

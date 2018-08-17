@@ -4,6 +4,8 @@
     <tr>
         <th>Title</th>
         <th>Created</th>
+        <th>User</th>
+        <th>Tags</th>
         <th>Action</th>
     </tr>
 
@@ -16,6 +18,12 @@
         </td>
         <td>
             <?= $article->created->format(DATE_RFC850) ?>
+        </td>
+        <td>
+            <?= $article->user->email ?>
+        </td>
+        <td>
+            <?php echo $article->get('tag_string') ?>
         </td>
         <td>
             <?= $this->Html->link('Edit', ['action' => 'edit', $article->slug]) ?>
