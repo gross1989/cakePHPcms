@@ -16,10 +16,11 @@ class UsersControllerTest extends IntegrationTestCase
      * @var array
      */
     public $fixtures = [
-        'app.users',
-        'app.articles'
+        'app.tags',
+        'app.articles',
+        'app.articles_tags',
+        'app.users'
     ];
-
     /**
      * Test index method
      *

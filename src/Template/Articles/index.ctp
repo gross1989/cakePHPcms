@@ -20,7 +20,7 @@
             <?= $article->created->format(DATE_RFC850) ?>
         </td>
         <td>
-            <?= $article->user->email ?>
+            <?= h($article->user->email) ?>
         </td>
         <td>
             <?php echo $article->get('tag_string') ?>
